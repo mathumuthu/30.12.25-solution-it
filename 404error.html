@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>404 | Page Not Found</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ================= RESET ================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Poppins,sans-serif;
+}
+
+/* ================= PAGE ================= */
+body{
+  min-height:100vh;
+  background:linear-gradient(135deg,#020b5a,#0a37d5);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  overflow:hidden;
+}
+
+/* BACKGROUND LINES */
+body::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:repeating-linear-gradient(
+    135deg,
+    rgba(255,255,255,.05),
+    rgba(255,255,255,.05) 1px,
+    transparent 1px,
+    transparent 14px
+  );
+}
+
+/* ================= CONTAINER ================= */
+.error-box{
+  position:relative;
+  z-index:2;
+  text-align:center;
+  max-width:600px;
+  padding:40px 20px;
+}
+
+/* 404 TEXT */
+.error-code{
+  font-size:160px;
+  font-weight:700;
+  letter-spacing:10px;
+  line-height:1;
+  animation:blinkGlow 3s infinite ease-in-out;
+}
+
+/* TEXT */
+.error-box h2{
+  font-size:32px;
+  margin:10px 0;
+}
+
+.error-box p{
+  color:#dbeafe;
+  line-height:1.7;
+  margin-bottom:30px;
+}
+
+/* BUTTON */
+.error-box a{
+  display:inline-block;
+  background:#2563eb;
+  color:#fff;
+  padding:14px 36px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:600;
+  transition:.3s;
+}
+
+.error-box a:hover{
+  transform:translateY(-4px);
+  box-shadow:0 20px 35px rgba(0,0,0,.35);
+}
+
+/* ================= ANIMATION ================= */
+@keyframes blinkGlow{
+  0%{text-shadow:0 0 0 rgba(96,165,250,0)}
+  50%{text-shadow:0 0 35px rgba(96,165,250,.8)}
+  100%{text-shadow:0 0 0 rgba(96,165,250,0)}
+}
+
+/* FLOATING DOTS */
+.dots span{
+  position:absolute;
+  width:8px;
+  height:8px;
+  background:#60a5fa;
+  border-radius:50%;
+  animation:float 6s infinite ease-in-out;
+}
+
+.dots span:nth-child(1){top:10%;left:20%}
+.dots span:nth-child(2){top:30%;left:80%}
+.dots span:nth-child(3){top:70%;left:15%}
+.dots span:nth-child(4){top:85%;left:70%}
+
+@keyframes float{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-15px)}
+  100%{transform:translateY(0)}
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:600px){
+  .error-code{font-size:110px}
+  .error-box h2{font-size:24px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="dots">
+  <span></span><span></span><span></span><span></span>
+</div>
+
+<div class="error-box">
+  <div class="error-code">404</div>
+  <h2>Page Not Found</h2>
+  <p>
+    Oops! The page you are looking for doesn’t exist or has been moved.<br>
+    Let’s get you back to safety.
+  </p>
+  <div style="display:flex;flex-direction:column;gap:12px;align-items:center;">
+    <a href="index.html">Back To Home →</a>
+   
+  </div>
+</div>
+
+</body>
+</html>
